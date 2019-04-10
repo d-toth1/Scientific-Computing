@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
-#include "hw_6_ex_1_f.cpp"
+#include "hw_6_ex_1_f.h"
 
 using namespace std;
 

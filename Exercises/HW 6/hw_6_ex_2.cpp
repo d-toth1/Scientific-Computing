@@ -1,7 +1,7 @@
 #include <iostream>
 #include <random>
 #include <functional>
-#include "hw_6_ex_2_f.cpp"
+#include "hw_6_ex_2_f.h"
 
 using namespace std;
 
