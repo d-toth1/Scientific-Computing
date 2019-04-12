@@ -18,7 +18,7 @@ int main() {
         if(!line.empty()) {
             char c;
             istringstream linefeed(line);
-            while( linefeed.get(c)) {
+            while( linefeed.get(c) && c != EOF) {
                 if (c != ' '){
                     all_chars.push_back(c);
                 }

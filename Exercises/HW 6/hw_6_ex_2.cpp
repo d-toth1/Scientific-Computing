@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
     double a, b, samples;
     a = stod(argv[1]);
     b = stod(argv[2]);
-    samples = stoi(argv[3]);
+    samples = stoll(argv[3]);
 
     int seed_value;
     random_device rd;
@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
 
     double x;
     double total = 0.0;
-    for (int i = 0; i < samples; i++) {
+    for (long long i = 0; i < samples; i++) {
         x = draw();
         total += f(x);
     }

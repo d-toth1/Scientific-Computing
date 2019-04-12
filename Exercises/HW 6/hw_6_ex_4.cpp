@@ -1,3 +1,8 @@
+/* Program to estimate the average Euclidian
+distance from a coordinate point to the origin via
+random walk Monte Carlo simulation
+*/
+
 #include <iostream>
 #include <vector>
 #include <cmath>
