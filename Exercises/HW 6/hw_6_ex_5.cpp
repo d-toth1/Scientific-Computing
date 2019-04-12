@@ -19,16 +19,16 @@ int main() {
             char c;
             istringstream linefeed(line);
             while( linefeed.get(c) && c != EOF) {
-                if (c != ' '){
+                if(c != ' '){
                     all_chars.push_back(c);
                 }
             }
         }
     }
-    for (int i = 0; i < all_chars.size(); i++) {
-        if (i % 2 == 1) {
+    for(int i = 0; i < all_chars.size(); i++) {
+        if(i % 2 == 1) {
             decoded_chars.push_back(all_chars[i]);
-        } else if (i % 2 == 0) {
+        } else if(i % 2 == 0) {
             encoded_chars.push_back(all_chars[i]);
         }
     }
@@ -37,26 +37,21 @@ int main() {
     ofstream decryp_txt("decrypted_text.txt");
 
     while(getline(encryp_txt, line)) {
-        istringstream linedata(line);
-        string line_decoded, word;
-        while(getline(linedata, word)) {
-            string word_decoded;
-            for(char c : word) {
-                char dec_char;
+        string line_decoded;
+        for(char c : line) {
+            if(c == ' ') {
+                line_decoded += c;
+            } else {
                 for(int i = 0; i < encoded_chars.size(); i++) {
                     if(c == encoded_chars[i]) {
-                        dec_char = decoded_chars[i];
+                        line_decoded += decoded_chars[i];
                     }
                 }
-                word_decoded += dec_char;
-
             }
-            word_decoded += ' ';
-            line_decoded += word_decoded;
 
-            }
-            decryp_txt << line_decoded << '\n';
         }
+        decryp_txt << line_decoded << '\n';
+    }
 
     return 0;
 }
