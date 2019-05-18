@@ -15,30 +15,30 @@ imag_values = []
 tolerance = 1.0e-14
 
 for i in tqdm(range(0,N)):
-    
+
     for j in range(0,N):
-        
+
         it = 0
         z = complex(0,0)
         x = -2.0 + ((4.0*i)/N)
-        
+
         if abs(x) < tolerance:
             x = 0
-            
+
         y = -2.0 + ((4.0*j)/N)
-        
+
         if abs(y) < tolerance:
             y = 0
-            
+
         c = complex(x, y)
-        
+
         while it < K and abs(z) <= 2:
-            
+
             z = f(z, c)
             it += 1
 
         if it == K and abs(z) <= 2:
-            
+
             real_values.append(c.real)
             imag_values.append(c.imag)
 
